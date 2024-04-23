@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { actions } from './store/index'
 import './App.css';
 
 function App() {
@@ -6,15 +7,15 @@ function App() {
   const dispatch = useDispatch()
   const increment = () => {
 
-    dispatch({ type: 'INC' })
+    dispatch(actions.increment())
 
   }
   const decrement = () => {
 
-    dispatch({ type: 'DEC' })
+    dispatch(actions.decrement())
   }
   const add = () => {
-    dispatch({ type: 'ADD', payload: 10 })
+    dispatch(actions.add(10))
   }
   return (
     <div >
